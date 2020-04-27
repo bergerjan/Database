@@ -139,7 +139,7 @@ public class Add extends JFrame {
                 //set default location of frame
                 frame.setLocationRelativeTo(null);
                 //set default close operation
-                setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
             }
         });
         //add actionListener
@@ -155,7 +155,6 @@ public class Add extends JFrame {
                 String brand = new String(txtFld1.getText());
                 String model = new String(txtFld2.getText());
                 String type = new String(txtFld3.getText());
-
 
                 if(AddMethod.addThings(brand, model, type)) {
                     System.out.println("Added Brand: " + brand);
