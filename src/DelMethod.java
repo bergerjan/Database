@@ -3,7 +3,7 @@ import java.io.*;
 import java.util.Scanner;
 
 public class DelMethod {
-    public static boolean delThings (String Brand, String Model, String Type) {
+    public static boolean delThings (String Model) {
 
         String currentLine = "";
         String userString;
@@ -12,8 +12,7 @@ public class DelMethod {
         String inputString = "";
         File tempFile = new File("random");
 
-        try
-        {
+        try {
             File newFile = new File("newFile.txt");
             FileWriter newwriter = new FileWriter(newFile, true);
             if(newFile.exists() == false) {
@@ -24,7 +23,7 @@ public class DelMethod {
 
             while (sc.hasNextLine())
             {
-                inputString = Brand.toLowerCase();
+                inputString = Model.toLowerCase();
                 userString = sc.nextLine();
                 tempString = userString.toLowerCase();
 
