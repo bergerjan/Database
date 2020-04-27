@@ -31,7 +31,7 @@ public class Add extends JFrame {
         //set default close operation
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         //set bounds of the frame
-        setBounds(100, 100, 500, 400);
+        setBounds(100, 100, 464, 350);
 
         //create object of JPanel
         contentPane = new JPanel();

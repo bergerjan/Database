@@ -1,8 +1,11 @@
-import java.io.*;
+import javax.swing.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
-public class AddMethod {
-    public static boolean addThings(String Brand, String Model, String Type) {
+public class EditMethod {
+    public static boolean viewThings(String Brand, String Model, String Type) {
 
         ArrayList<String> line1 = new ArrayList<>();
 
@@ -33,32 +36,6 @@ public class AddMethod {
                 ex.printStackTrace();
             }
         }
-
-        FileWriter fw;
-        try {
-            fw = new FileWriter(new File("GCData.db"));
-
-            fw.write(Brand);
-            fw.write(",");
-            fw.write(Model);
-            fw.write(",");
-            fw.write(Type);
-            fw.write(System.lineSeparator());
-            //fw.write(line1);
-
-            for (String s : line1) {
-
-                fw.write(s);
-                fw.write(System.lineSeparator());
-
-            }
-            fw.close();
-
-        } catch (IOException el) {
-            el.printStackTrace();
-        }
-
-
-    return true;
-}
+        return true;
+    }
 }

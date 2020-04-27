@@ -30,7 +30,7 @@ public class Search extends JFrame {
         //set default close operation
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         //set bounds of the frame
-        setBounds(100, 100, 500, 400);
+        setBounds(100, 100, 464, 350);
 
         //create object of JPanel
         contentPane = new JPanel();
@@ -69,7 +69,7 @@ public class Search extends JFrame {
         contentPane.add(btnSubmit);
 
         //set Label in the frame
-        JLabel lblBrand = new JLabel("Brand:");
+        JLabel lblBrand = new JLabel("Looking for:");
         //set foreground color to the label
         lblBrand.setForeground(Color.DARK_GRAY);
         //set font of that label
@@ -115,10 +115,10 @@ public class Search extends JFrame {
                 String FindSearchName = txtFld1.getText();
 
                 if(SearchMethod.searchThing(FindSearchName)) {
-                    System.out.println("Found the name: " + FindSearchName);
+                    System.out.println("Found: " + FindSearchName);
 
                 } else {
-                    System.out.println("Did not find name: " + FindSearchName);
+                    System.out.println("Did not find: " + FindSearchName);
                 }
 
             }

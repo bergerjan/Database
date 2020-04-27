@@ -3,6 +3,9 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class Edit extends JFrame {
 
@@ -30,7 +33,7 @@ public class Edit extends JFrame {
         //set default close operation
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         //set bounds of the frame
-        setBounds(100, 100, 500, 400);
+        setBounds(100, 100, 464, 350);
 
         //create object of JPanel
         contentPane = new JPanel();
@@ -68,6 +71,7 @@ public class Edit extends JFrame {
         //add Button into contentPane
         contentPane.add(btnSubmit);
 
+
         //add actionListener
         btnCancel.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
@@ -92,7 +96,21 @@ public class Edit extends JFrame {
         btnSubmit.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
 
+                String brand = "";
+                String model = "";
+                String type = "";
+
+                if(EditMethod.viewThings(brand, model, type)) {
+
+                    System.out.println("Displaying: Brands, Models, Types");
+
+                } else {
+                    System.out.println("Did not display");
+                }
+
             }
         });
     }
+
+
 }
