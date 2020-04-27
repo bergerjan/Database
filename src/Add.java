@@ -3,6 +3,7 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.*;
 
 public class Add extends JFrame {
 
@@ -30,7 +31,7 @@ public class Add extends JFrame {
         //set default close operation
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         //set bounds of the frame
-        setBounds(100, 100, 450, 300);
+        setBounds(100, 100, 500, 400);
 
         //create object of JPanel
         contentPane = new JPanel();
@@ -69,15 +70,15 @@ public class Add extends JFrame {
         contentPane.add(btnSubmit);
 
         //set Label in the frame
-        JLabel lblName = new JLabel("Student Name:");
+        JLabel lblBrand = new JLabel("Brand:");
         //set foreground color to the label
-        lblName.setForeground(Color.DARK_GRAY);
+        lblBrand.setForeground(Color.DARK_GRAY);
         //set font of that label
-        lblName.setFont(new Font("Times New Roman", Font.CENTER_BASELINE | Font.PLAIN, 16 ));
+        lblBrand.setFont(new Font("Times New Roman", Font.CENTER_BASELINE | Font.PLAIN, 16 ));
         //set bound of the label
-        lblName.setBounds(10,10,239,39);
+        lblBrand.setBounds(10,10,239,39);
         //add label to the contentPane
-        contentPane.add(lblName);
+        contentPane.add(lblBrand);
 
         //set TextField in the frame
         JTextField txtFld1 = new JTextField();
@@ -89,15 +90,15 @@ public class Add extends JFrame {
         contentPane.add(txtFld1);
 
         //set Label in the frame
-        JLabel lblGradYr = new JLabel("Graduation YR:");
+        JLabel lblModel = new JLabel("Model:");
         //set foreground color to the label
-        lblGradYr.setForeground(Color.DARK_GRAY);
+        lblModel.setForeground(Color.DARK_GRAY);
         //set font of that label
-        lblGradYr.setFont(new Font("Times New Roman", Font.CENTER_BASELINE | Font.PLAIN, 16));
+        lblModel.setFont(new Font("Times New Roman", Font.CENTER_BASELINE | Font.PLAIN, 16));
         //set bound of the label
-        lblGradYr.setBounds(10, 50, 239, 39);
+        lblModel.setBounds(10, 50, 239, 39);
         //add label to the contentPane
-        contentPane.add(lblGradYr);
+        contentPane.add(lblModel);
 
         //set TextField in the frame
         JTextField txtFld2 = new JTextField();
@@ -109,15 +110,15 @@ public class Add extends JFrame {
         contentPane.add(txtFld2);
 
         //set Label in the frame
-        JLabel lblDOB = new JLabel("Date of Birth:");
+        JLabel lblType = new JLabel("Type:");
         //set foreground color to the label
-        lblDOB.setForeground(Color.DARK_GRAY);
+        lblType.setForeground(Color.DARK_GRAY);
         //set font of that label
-        lblDOB.setFont(new Font("Times New Roman", Font.CENTER_BASELINE | Font.PLAIN, 16));
+        lblType.setFont(new Font("Times New Roman", Font.CENTER_BASELINE | Font.PLAIN, 16));
         //set bound of the label
-        lblDOB.setBounds(10, 90, 239, 39);
+        lblType.setBounds(10, 90, 239, 39);
         //add label to the contentPane
-        contentPane.add(lblDOB);
+        contentPane.add(lblType);
 
         //set TextField in the frame
         JTextField txtFld3 = new JTextField();
@@ -128,31 +129,11 @@ public class Add extends JFrame {
         //add label to that contentPane
         contentPane.add(txtFld3);
 
-        //set Label in the frame
-        JLabel lblGPA = new JLabel("GPA:");
-        //set foreground color to the label
-        lblGPA.setForeground(Color.DARK_GRAY);
-        //set font of that label
-        lblGPA.setFont(new Font("Times New Roman", Font.CENTER_BASELINE | Font.PLAIN, 16));
-        //set bound of the label
-        lblGPA.setBounds(10, 130, 239, 39);
-        //add label to the contentPane
-        contentPane.add(lblGPA);
-
-        //set TextField in the frame
-        JTextField txtFld4 = new JTextField();
-        //set font of that textField
-        txtFld4.setFont(new Font("Times New Roman", Font.CENTER_BASELINE | Font.PLAIN, 16));
-        //set bounds of that textField
-        txtFld4.setBounds(130, 130, 239, 39);
-        //add label to that contentPane
-        contentPane.add(txtFld4);
-
         //add actionListener
         btnCancel.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
                 //call the object of Menu and set visible true
-                Menu frame = new Menu();
+                MyGui frame = new MyGui();
                 //make frame visible
                 frame.setVisible(true);
                 //set default location of frame
@@ -171,7 +152,20 @@ public class Add extends JFrame {
         //add actionListener
         btnSubmit.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
+                String brand = new String(txtFld1.getText());
+                String model = new String(txtFld2.getText());
+                String type = new String(txtFld3.getText());
 
+
+                if(AddMethod.addThings(brand, model, type)) {
+                    System.out.println("Added Brand: " + brand);
+                    System.out.println("Added Model: " + model);
+                    System.out.println("Added Type: " + type);
+
+
+                } else {
+                    System.out.println("Did not add: " + brand + ", " + model + ", " + type);
+                }
             }
         });
     }

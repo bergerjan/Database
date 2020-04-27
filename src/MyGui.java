@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 import java.lang.*;
 
 public class MyGui extends JFrame {
-    private JPanel contentPane;
+    private JPanel panel1;
     private JButton button1;
     private JLabel label;
 
@@ -23,6 +23,7 @@ public class MyGui extends JFrame {
                     frame.setVisible(true);
                     frame.setLocationRelativeTo(null);
                     frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+                    frame.setResizable(false);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -36,17 +37,17 @@ public class MyGui extends JFrame {
         //set default close operation
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         //set bounds of the frame
-        setBounds(100, 100, 450, 300);
+        setBounds(100, 100, 464, 350);
         //create object of JPanel
-        contentPane = new JPanel();
+        panel1 = new JPanel();
         //set color of background
-        contentPane.setBackground(Color.lightGray);
+        panel1.setBackground(Color.lightGray);
         //set border
-        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+        panel1.setBorder(new EmptyBorder(5, 5, 5, 5));
         //set ContentPane
-        setContentPane(contentPane);
+        setContentPane(panel1);
         //set null
-        contentPane.setLayout(null);
+        panel1.setLayout(null);
 
         //create object of JButton and set label on it
         JButton btnAdd = new JButton("Add");
@@ -55,7 +56,7 @@ public class MyGui extends JFrame {
         //set bounds of the Button
         btnAdd.setBounds(15, 215, 100, 25);
         //add Button into contentPane
-        contentPane.add(btnAdd);
+        panel1.add(btnAdd);
 
         //create object of JButton and set label on it
         JButton btnDel = new JButton("Del");
@@ -64,7 +65,7 @@ public class MyGui extends JFrame {
         //set bounds of the Button
         btnDel.setBounds(122, 215, 100, 25);
         //add Button into contentPane
-        contentPane.add(btnDel);
+        panel1.add(btnDel);
 
         //create object of JButton and set label on it
         JButton btnSearch = new JButton("Search");
@@ -73,16 +74,16 @@ public class MyGui extends JFrame {
         //set bounds of the Button
         btnSearch.setBounds(230, 215, 100, 25);
         //add Button into contentPane
-        contentPane.add(btnSearch);
+        panel1.add(btnSearch);
 
         //create object of JButton and set label on it
-        JButton btnEdit = new JButton("Edit");
+        JButton btnEdit = new JButton("View");
         //set font of the Button
-        btnEdit.setFont(new Font("Edit", Font.BOLD, 16));
+        btnEdit.setFont(new Font("View", Font.BOLD, 16));
         //set bounds of the Button
         btnEdit.setBounds(337, 215, 100, 25);
         //add Button into contentPane
-        contentPane.add(btnEdit);
+        panel1.add(btnEdit);
 
         //create object of JButton and set label on it
         JButton btnQuit = new JButton("Quit");
@@ -91,10 +92,10 @@ public class MyGui extends JFrame {
         //set bounds of the Button
         btnQuit.setBounds(337, 250, 100, 25);
         //add Button into contentPane
-        contentPane.add(btnQuit);
+        panel1.add(btnQuit);
 
         //set Label in the frame
-        JLabel lblStartMessage = new JLabel("Welcome to Thornton Academy Student Database");
+        JLabel lblStartMessage = new JLabel("Welcome to My Database");
         //set foreground color to the label
         lblStartMessage.setForeground(Color.RED);
         //set font of that label
@@ -102,7 +103,7 @@ public class MyGui extends JFrame {
         //set bound of the label
         lblStartMessage.setBounds(20, 30, 500, 39);
         //add label to the contentPane
-        contentPane.add(lblStartMessage);
+        panel1.add(lblStartMessage);
 
         //set Label in the frame
         JLabel lblMessage = new JLabel("Select the action you want to perform");
@@ -113,7 +114,7 @@ public class MyGui extends JFrame {
         //set bound of the label
         lblMessage.setBounds(20,170,400,39);
         //add label to the contentPane
-        contentPane.add(lblMessage);
+        panel1.add(lblMessage);
 
         //add actionListener
         btnAdd.addActionListener(new ActionListener() {
@@ -127,6 +128,9 @@ public class MyGui extends JFrame {
                 //set default close operation
                 setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
+
+                MyGui frame1 = new MyGui();
+                frame1.setVisible(false);
                 try {
 
                 } catch (Exception ex) {
