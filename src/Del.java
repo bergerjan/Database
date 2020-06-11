@@ -152,11 +152,11 @@ public class Del extends JFrame {
         btnSubmit.addActionListener(new ActionListener() {
 
                 public void actionPerformed(ActionEvent arg0){
-                    String brand = new String(txtFld1.getText());
-                    String model = new String(txtFld2.getText());
-                    String type = new String(txtFld3.getText());
+                    String brand = txtFld1.getText();
+                    String model = txtFld2.getText();
+                    String type = txtFld3.getText();
 
-                    if (DelMethod.delThings(brand, model, type)) {
+                    if (DelMethod.delThings(brand)) {
                         System.out.println("Deleted Brand: " + brand);
                         System.out.println("Deleted Model: " + model);
                         System.out.println("Deleted Type: " + type);

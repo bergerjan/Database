@@ -152,9 +152,9 @@ public class Add extends JFrame {
         //add actionListener
         btnSubmit.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
-                String brand = new String(txtFld1.getText());
-                String model = new String(txtFld2.getText());
-                String type = new String(txtFld3.getText());
+                String brand = txtFld1.getText();
+                String model = txtFld2.getText();
+                String type = txtFld3.getText();
 
                 if(AddMethod.addThings(brand, model, type)) {
                     System.out.println("Added Brand: " + brand);
